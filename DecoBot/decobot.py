@@ -5,7 +5,7 @@ class DecoBot:
 
     def __init__(self):
 
-        # responses for common questions
+        # predefined responses
         self.responses = {
             "hello": "Hey! How are you?",
             "hi": "Hi there!",
@@ -27,10 +27,10 @@ class DecoBot:
             "thank you": "You're welcome!",
             "thanks": "Happy to help!",
 
-            "bye": "Goodbye! Take care 👋"
+            "bye": "Goodbye! Take care."
         }
 
-        # keyword matching for longer sentences
+        # keyword responses
         self.keywords = {
             "ai": "AI is about making machines think and learn like humans.",
             "python": "Python is one of the most popular programming languages today.",
@@ -44,26 +44,38 @@ class DecoBot:
             "Try asking about AI, Python, chatbots, or DecodeLabs."
         )
 
-    # clean the user input
+    # display chatbot introduction
+    def show_welcome(self):
+
+        print("=" * 50)
+        print("          Welcome to DecoBot")
+        print("      A Simple Rule-Based Chatbot")
+        print("=" * 50)
+
+    # clean user input
     def clean_text(self, text):
+
         text = text.lower().strip()
         text = re.sub(r"[^\w\s]", "", text)
+
         return text
 
-    # check direct matches
+    # check exact question match
     def exact_match(self, text):
+
         return self.responses.get(text)
 
-    # check keyword matches
+    # check keyword match
     def keyword_match(self, text):
 
-        for keyword in self.keywords:
+        for keyword, response in self.keywords.items():
+
             if keyword in text:
-                return self.keywords[keyword]
+                return response
 
         return None
 
-    # generate response
+    # generate chatbot response
     def get_response(self, user_input):
 
         clean_input = self.clean_text(user_input)
@@ -80,14 +92,10 @@ class DecoBot:
 
         return self.fallback
 
-    # start the chatbot
+    # start conversation
     def start_chat(self):
 
-        print("=" * 50)
-        print("      DecoBot - Rule Based Chatbot")
-        print("     DecodeLabs Internship Project")
-        print("      Type 'bye' to exit")
-        print("=" * 50)
+        self.show_welcome()
 
         while True:
 
@@ -99,7 +107,7 @@ class DecoBot:
             clean_input = self.clean_text(user_input)
 
             if clean_input in {"bye", "exit", "quit"}:
-                print("DecoBot: Bye! See you next time 👋")
+                print("DecoBot: Bye! See you next time.")
                 break
 
             response = self.get_response(user_input)
@@ -108,5 +116,6 @@ class DecoBot:
 
 
 if __name__ == "__main__":
+
     bot = DecoBot()
     bot.start_chat()
