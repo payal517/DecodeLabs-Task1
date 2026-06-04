@@ -4,7 +4,7 @@ This repository contains the projects and tasks I am working on during my AI/ML 
 
 ## Projects
 
-### DecoBot - Rule-Based Chatbot
+1. DecoBot - Rule-Based Chatbot
 
 DecoBot is a simple chatbot built using Python. It responds to user queries using predefined responses and keyword matching.
 
