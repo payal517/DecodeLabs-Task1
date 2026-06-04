@@ -2,18 +2,20 @@
 
 ## About the Project
 
-DecoBot is a simple rule-based chatbot built using Python. It can answer a few predefined questions related to AI, Python, chatbots, and DecodeLabs.
+DecoBot is a simple rule-based chatbot developed using Python as part of my AI/ML Internship at DecodeLabs.
 
-The main idea behind this project was to understand how a chatbot works before moving to more advanced AI-based chatbots. Instead of using machine learning, DecoBot works using predefined responses and keyword matching.
+The chatbot responds to user queries using predefined responses and keyword matching. The goal of this project was to understand the fundamentals of chatbot development, including user input processing, response generation, and code organization using Object-Oriented Programming (OOP).
 
 ## Features
 
-* Responds to greetings like Hello, Hi, and Hey
-* Answers basic questions related to AI and Python
+* Responds to greetings and common user queries
+* Answers basic questions related to AI, Python, Chatbots, and DecodeLabs
 * Uses exact matching for predefined questions
-* Uses keyword matching for longer sentences
-* Handles unknown questions using a fallback response
-* Allows users to exit the chat using commands like Bye, Exit, or Quit
+* Uses keyword matching for longer user inputs
+* Cleans and sanitizes user input before processing
+* Handles unknown queries using a fallback response
+* Supports exit commands such as Bye, Exit, and Quit
+* Organized using Object-Oriented Programming (OOP)
 
 ## Technologies Used
 
@@ -25,10 +27,19 @@ The main idea behind this project was to understand how a chatbot works before m
 
 1. The user enters a message.
 2. The input is cleaned and converted to lowercase.
-3. The chatbot first checks for an exact match.
-4. If no exact match is found, it checks for keywords.
+3. The chatbot checks for an exact match in the response dictionary.
+4. If no exact match is found, keyword matching is performed.
 5. If a match is found, the corresponding response is returned.
-6. Otherwise, a default message is displayed.
+6. Otherwise, a fallback response is displayed.
+
+## Main Functions
+
+* `show_welcome()` – Displays the chatbot welcome message.
+* `clean_text()` – Cleans and formats user input.
+* `exact_match()` – Checks for direct matches in the response dictionary.
+* `keyword_match()` – Searches for keywords within user input.
+* `get_response()` – Generates the appropriate chatbot response.
+* `start_chat()` – Starts and manages the chatbot conversation.
 
 ## Sample Conversation
 
@@ -50,17 +61,20 @@ DecoBot: Bye! See you next time.
 
 ## What I Learned
 
-While building this project, I learned:
+Through this project, I learned:
 
 * How rule-based chatbots work
-* How to process user input
-* How dictionaries can be used for storing responses
-* How keyword matching improves chatbot responses
-* Basic use of OOP in Python
+* How to process and sanitize user input
+* How dictionaries can be used for storing chatbot responses
+* The difference between exact matching and keyword matching
+* How to organize code using Object-Oriented Programming (OOP)
+* How chatbot conversation flow is managed
 
 ## Future Improvements
 
 * Add more responses and topics
 * Store conversation history
-* Create a GUI version
+* Create a graphical user interface (GUI)
 * Integrate machine learning for smarter responses
+* Add support for more natural conversations
+
